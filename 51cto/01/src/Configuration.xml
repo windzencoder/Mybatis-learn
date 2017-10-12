@@ -37,6 +37,8 @@
 	<mappers>
 		<!-- <mapper resource="com/wz/mybatis/test/userMapper.xml" /> -->
 		<mapper resource="com/wz/mybatis/test2/orderMapper.xml" />
+		<mapper resource="com/wz/mybatis/test3/teacherMapper.xml" />
+		<mapper resource="com/wz/mybatis/test3/classMapper.xml" />
 	</mappers>
 
 
