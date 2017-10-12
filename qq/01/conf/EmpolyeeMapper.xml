@@ -2,10 +2,15 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wz.mybatis.EmployeeMapper">
+<mapper namespace="com.wz.mybatis.dao.EmployeeMapper">
 
-  <select id="selectEmp" resultType="com.wz.mybatis.bean.Employee">
-    select id, last_name lastName, gender, email from tbl_employee where id = #{id}
-  </select>
-  
+	<select id="selectEmp" resultType="com.wz.mybatis.bean.Employee">
+		select id, last_name lastName, gender, email from tbl_employee where id =
+		#{id}
+	</select>
+
+	<select id="getEmpById" resultType="com.wz.mybatis.bean.Employee">
+		select id, last_name lastName, gender, email from tbl_employee where id = #{id}
+	</select>
+
 </mapper>
