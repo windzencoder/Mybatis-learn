@@ -45,7 +45,6 @@ public class Test03 {
 		String statement = "com.wz.mybatis.test3.classMapper.getClass2";
 		Class clazz = session.selectOne(statement, 1);
 		System.out.println(clazz);
-		
 	}
 
 }
