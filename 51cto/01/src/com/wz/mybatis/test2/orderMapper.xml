@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wz.mybatis.test2.orderMapper">
+
+	<resultMap type="order" id="orderMap">
+		<!-- 针对主键 -->
+		<id property="id" column="order_id" />
+		<result property="orderNo" column="order_no" />
+		<result property="price" column="order_price" />
+	</resultMap>
+
+	<!--根据id查询到一个order对象 -->
+	<select id="getOrder" parameterType="int" resultType="order">
+		select order_id id, order_no orderNo, order_price price from orders where order_id=#{id}
+	</select>
+
+	<select id="getOrder2" parameterType="int" resultMap="orderMap">
+		select * from orders where order_id=#{id}
+	</select>
+
+
+</mapper>

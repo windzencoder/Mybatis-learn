@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-	<!DOCTYPE configuration
+<!DOCTYPE configuration
 	    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	    "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+	<!-- db文件 -->
+	<properties resource="db.properties"></properties>
+	
+	<!-- 注意位置顺序 -->
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
+	
+	<typeAliases>
+		<package name="com.wz.mybatis.bean"/>
+	</typeAliases>
+
 
 
 	<environments default="development">
@@ -12,17 +25,20 @@
 				<property name="" value="" />
 			</transactionManager>
 			<dataSource type="UNPOOLED">
-				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3306/mybatis" />
-				<property name="username" value="root" />
-				<property name="password" value="" />
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
 			</dataSource>
 		</environment>
 	</environments>
 
 	<!-- 注册文件 -->
 	<mappers>
-		<mapper resource="com/wz/mybatis/test/userMapper.xml" />
+		<!-- <mapper resource="com/wz/mybatis/test/userMapper.xml" /> -->
+		<mapper resource="com/wz/mybatis/test2/orderMapper.xml" />
 	</mappers>
+
+
 
 </configuration>

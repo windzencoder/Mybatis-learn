@@ -10,5 +10,25 @@
 		select * from users where id=#{id}
 	</select>
 	
-
+	<!-- 增 -->
+	<insert id="addUser" parameterType="com.wz.mybatis.test.User">
+		insert into users (name, age) values(#{name}, #{age})
+	</insert>
+	
+	
+	<!-- 删 -->
+	<delete id="deleteUser" parameterType="int">
+		delete from users where id=#{id}
+	</delete>
+	
+	<!-- 改 -->
+	<update id="updateUser" parameterType="com.wz.mybatis.test.User">
+		update users set name=#{name}, age=#{age} where id=#{id}
+	</update>
+	
+	<!-- 查 -->
+	<select id="getAllUsers" resultType="com.wz.mybatis.test.User">
+		select * from users
+	</select>
+	
 </mapper>
